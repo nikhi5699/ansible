@@ -1,0 +1,9 @@
+all:
+  children:
+    web:
+      hosts:
+        52.91.61.146:
+          ansible_user: ubuntu
+        52.23.195.57:
+          ansible_user: ubuntu
+

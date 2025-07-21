@@ -1,0 +1,10 @@
+---
+- name: Stop MySQL Service
+  hosts: all
+  become: yes
+  tasks:
+    - name: Stop mysql service
+      ansible.builtin.service:
+        name: mysql
+        state: stopped
+

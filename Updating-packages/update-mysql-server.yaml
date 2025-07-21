@@ -1,0 +1,16 @@
+---
+- name: Update MySQL Server package
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Upgrade mysql-server package to latest version
+      apt:
+        name: mysql-server
+        state: latest
+
+

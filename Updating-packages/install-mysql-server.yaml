@@ -1,0 +1,16 @@
+- name: Install MySQL Server
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install MySQL server package
+      apt:
+        name: mysql-server
+        state: present
+        update_cache: yes
+
+    - name: Ensure MySQL is started and enabled
+      systemd:
+        name: mysql
+        state: started
+        enabled: yes
+
